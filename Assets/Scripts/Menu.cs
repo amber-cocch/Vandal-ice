@@ -11,13 +11,4 @@ public class Menu : MonoBehaviour
         SceneManager.LoadScene("Main");
     }
 
-    public void GoToIceRink()
-    {
-        SceneManager.LoadScene("IceRink");
-    }
-
-    public void GoToLockers()
-    {
-        SceneManager.LoadScene("Lockers");
-    }
 }
