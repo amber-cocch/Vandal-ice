@@ -1,0 +1,72 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class Inventory : MonoBehaviour
+{
+
+    public Item hamburger;
+   // public Item letter;
+  //  public Item skates;
+    public Item[] ItemList;
+
+    public Image icon;
+
+
+
+    public void Start()
+    {
+        hamburger.itemName = "hamburger";
+        hamburger.isPickedUp = false;
+
+        /*
+        skates.itemName = "skates";
+        skates.isPickedUp = false;
+
+        letter.itemName = "letter";
+        letter.isPickedUp = false;
+        */
+
+        Item[] ItemList = {hamburger};
+
+    }
+
+    public void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Item"))
+        {
+
+            GetItem(other.gameObject.name);
+            other.gameObject.SetActive(false);
+            icon.enabled = true;
+        }
+    }
+
+    public void GetItem(string itemName)
+    {
+        for(int i = 0; i < ItemList.Length; i++)
+        {
+            if(ItemList[i].itemName == itemName)
+            {
+                ItemList[i].isPickedUp = true;
+                
+            }
+        }
+        
+    }
+
+    public void DropItem(string itemName)
+    {
+        for (int i = 0; i < ItemList.Length; i++)
+        {
+            if (ItemList[i].itemName == itemName)
+            {
+                ItemList[i].isPickedUp = true;
+            }
+        }
+    }
+
+    
+
+}

@@ -6,6 +6,11 @@ public class FieldOfView : MonoBehaviour
 {
     //taken from untiy API https://docs.unity3d.com/ScriptReference/Vector3.Angle.html
     public Transform target;
+
+    void Start()
+    {
+        target = GameObject.FindGameObjectWithTag("Player").transform;
+    }
     void Update()
     {
         Vector3 targetDir = target.position - transform.position;

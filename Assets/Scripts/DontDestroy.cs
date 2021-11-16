@@ -4,15 +4,19 @@ using UnityEngine;
 
 public class DontDestroy : MonoBehaviour
 {
-    // Start is called before the first frame update
+
+
+
+    //first attempt at the solution to preserve player
+    
     private void Awake()
     {
-
+        
         GameObject[] player = GameObject.FindGameObjectsWithTag("Player");
 
         if (player.Length > 1)
         {
-            Destroy(this.gameObject);
+            Destroy(player[1]);
         }
 
         DontDestroyOnLoad(this.gameObject);

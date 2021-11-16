@@ -6,6 +6,11 @@ TagManager:
   tags:
   - Door
   - turn
+  - Spawn
+  - Item
+  - Ham
+  - Ska
+  - Let
   layers:
   - Default
   - TransparentFX

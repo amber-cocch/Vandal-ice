@@ -8,7 +8,8 @@ public class ChangeRooms : MonoBehaviour
     // Start is called before the first frame update
 
     public int sceneIndex;
-    public GameObject protag;
+    // public GameObject protag;
+
 
     public void OnTriggerEnter2D(Collider2D other)
     {
@@ -16,6 +17,9 @@ public class ChangeRooms : MonoBehaviour
         {
             SceneManager.LoadScene(sceneIndex);
 
+            other.transform.position = GameObject.Find("Spawn").transform.position;
+            //Debug.Log(other.transform.position);
+            
 
             //name = sceneName.name;
             //scene = SceneManager.GetActiveScene();

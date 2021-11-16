@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour
 {
 
     [Range(1, 10)]
-    public float speed = 0.5f;
+    public float speed = 0.24f;
 
     public Rigidbody2D rb;
 
@@ -19,6 +19,15 @@ public class PlayerMovement : MonoBehaviour
 
     // Update is called once per frame
     void Update()
+    {
+   
+
+        
+       
+
+    }
+
+    private void FixedUpdate()
     {
         if (Input.GetKey(KeyCode.W))
         {
@@ -39,14 +48,5 @@ public class PlayerMovement : MonoBehaviour
         {
             transform.Translate(Vector2.right * speed * Time.deltaTime);
         }
-
-        
-       
-
-    }
-
-    private void FixedUpdate()
-    {
-        
     }
 }
